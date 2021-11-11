@@ -17,13 +17,18 @@
 		Import-Module posh-git
 		Import-Module oh-my-posh
 		Set-PoshPrompt -Theme hotstick.minimal
+	
+
+	Download link settigs.json
+	
+	step-6: https://github.com/mohammadanarul/windows-terminal-customize/blob/main/settings.json
 
 
 # Customize Theme hotstick.minimal
 
 	Set-PoshPrompt -Theme hotstick.minimal
 
-	Download link: C:\Users\codingwithdjango\Desktop\windows-terminal-customize\hotstick.minimal.omp.json
+	Download link: https://github.com/mohammadanarul/windows-terminal-customize/blob/main/hotstick.minimal.omp.json
 
 	file path: C:\Users\codingwithdjango\Documents\WindowsPowerShell\Modules\oh-my-posh\6.2.2\themes
 

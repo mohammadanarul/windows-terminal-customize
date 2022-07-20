@@ -1,45 +1,52 @@
 # good Looking  windows-terminal-customize
 
-	step-1: Install-Module posh-git -Scope CurrentUser
-	step-2: Install-Module oh-my-posh -Scope CurrentUser
-	step-3: Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+## Checking the winget version.
 
-	# check path
+```base
+winget --version
+>>> v1.2.11601
+```
 
-	step-4: echo $profile
+Simply run the command: `` oh-my-posh install ``
 
-	show path: C:\Users\codingwithdjango\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+```base
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
+```
 
-	# Visual code Editor Or Sublime Code Or Notepad
+```base
+code $PROFILE
+```
+It will create, or open default shell profile in default notepad editor. In this stage, we will copy the strings from below and paste them into the ``$profile ``file:
 
-	step-5: subl $Profile OR code $Profile Or notepad $profile
+```text
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\hotstick.minimal.omp.json" | Invoke-Expression
+```
+Save and close it. For the PATH to be reloaded, a restart of your terminal is advised.
 
-		Import-Module posh-git
-		Import-Module oh-my-posh
-		Set-PoshPrompt -Theme hotstick.minimal
-	
+### Customize Terminal Theme (Optional)
 
-	Download link settigs.json
-	
-	step-6: https://github.com/mohammadanarul/windows-terminal-customize/blob/main/settings.json
-
-
-# Customize Theme hotstick.minimal
-
-	Set-PoshPrompt -Theme hotstick.minimal
-
-	Download link: https://github.com/mohammadanarul/windows-terminal-customize/blob/main/hotstick.minimal.omp.json
-
-	file path: C:\Users\codingwithdjango\Documents\WindowsPowerShell\Modules\oh-my-posh\6.2.2\themes
-
-	past new  file --> hotstick.minimal.omp.json
+[settings.json link click here](https://github.com/mohammadanarul/windows-terminal-customize/blob/main/settings.json/)
 
 
-# Fix problem
+### Customize Theme hotstick.minimal
+Find out `oh-my-posh` theme directory. i.e:
 
-	# Administration mode run your command line and past this code
+```base 
+$env:POSH_THEMES_PATH
+```
+`
+Result will be something like this: C:\Users\{your_username}\AppData\Local\Programs\oh-my-posh\themes
+`
+ - Select the right json theme file. i.e: hotstick.minimal.omp.json and open it with any editor.
+ - Replace all the data with this theme [hotstick.minimal.omp.json](https://github.com/mohammadanarul/windows-terminal-customize/blob/main/hotstick.minimal.omp.json/). Copy all the settings and paste them to your theme settings file. Save it and simply close it.
 
-	$ Set-ExecutionPolicy RemoteSigned
+## Fix problem
+
+Administration mode run your command line and past this code
+
+```base
+Set-ExecutionPolicy RemoteSigned
+```
 
 
 
